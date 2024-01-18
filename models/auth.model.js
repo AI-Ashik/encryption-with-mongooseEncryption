@@ -1,4 +1,5 @@
 const { default: mongoose } = require("mongoose");
+const encrypt = require("mongoose-encryption");
 
 const authSchema = mongoose.Schema({
   name: {
@@ -17,6 +18,13 @@ const authSchema = mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+});
+
+const { ENC_KEY } = process.env;
+
+authSchema.plugin(encrypt, {
+  secret: ENC_KEY,
+  encryptedFields: ["password"],
 });
 
 const authModel = mongoose.model("mongooseEncr", authSchema);
