@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-#### This encryption method is very simple it just added to the mongoose schema as a authentication of feilds
+#### This encryption method is very simple it just added to the mongoose schema as a authentication of fields
 
 - [Update Node](#update-node)
   - [Windows](#windows)
